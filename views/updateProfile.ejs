@@ -1,0 +1,46 @@
+<%- include('./partial/_head.ejs', {title: "Profile"}) %>
+<body>
+    
+    <%- include('./partial/_navbar') %>
+    <center>
+        <h1>User Profile</h1>
+        <!-- userProfile.ejs -->
+<h1>Lengkapi Data Diri</h1>
+<form action="/updateProfile" method="POST">
+    <p>
+    <label >Fullname:</label>
+    <input type="text" name="fullName">
+    </p>
+
+    <p>
+    <label>City:</label>
+    <input type="text" name="city">
+    </p>
+
+    <p>
+    <label>Job:</label>
+    <input type="text" name="job">
+    </p>
+
+    <p>
+    <label>Height:</label>
+    <input type="number" name="height">
+    </p>
+
+    <p>
+    <label>Weight:</label>
+    <input type="number" name="weight">
+    </p>
+
+    <p>
+    <label>Birth Of Date:</label>
+    <input type="date" name="BirthOfDate">
+    </p>
+    <!-- Tambahan input sesuai dengan data yang ingin dilengkapi -->
+    
+    <button type="submit">Simpan</button>
+</form>
+
+    </center>
+</body>
+</html>

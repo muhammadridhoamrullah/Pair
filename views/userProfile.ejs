@@ -1,0 +1,39 @@
+<%- include('./partial/_head.ejs', {title: "User Profile"}) %>
+<body>
+    
+    <%- include('./partial/_navbar') %>
+<center>
+    <h1>User Profile</h1>
+
+    <p>Hi, <%= data.fullName %></p>
+    
+    <table border="1">
+        <tr>
+            <th>Fullname</th>
+            <th>City</th>
+            <th>Job</th>
+            <th>Height</th>
+            <th>Weight</th>
+            <th>Age</th>
+            <th>Action</th>
+        </tr>
+         <tr>
+            <td><%= data.fullName %></td>
+            <td><%= data.city %></td>
+            <td><%= data.job %></td>              
+            <td><%= addCmToHeight(data.height) %></td>
+            <td><%= addKgToWeight(data.weight) %></td>
+            <td><%= data.formatAge %></td>
+            <td>
+                <a href="/users/edit/<%= data.id %>"><button>Edit</button></a>
+            </td>
+         </tr>
+
+
+
+    </table>
+</center>
+
+    
+</body>
+</html>

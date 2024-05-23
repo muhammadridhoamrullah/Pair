@@ -1,0 +1,30 @@
+<%- include('../partial/_head.ejs', {title: "Beranda"}) %>
+<body>
+    <%- include('../partial/_navbar') %>
+    <center>
+        <h1>Beranda</h1>
+        <% data.forEach(el => { %>
+        <div class="card" style="width: 18rem;">
+            <img src="<%= el.imgUrl %>" class="card-img-top" alt="<%= el.title %>">
+            <div class="card-body">
+                <h5 class="card-title"><%= el.title %></h5>
+                <b>
+                    <p class="card-text">
+                        posted by: <a href="/users/<%= el.User._id %>"><%= el.User.userName %></a>
+                    </p>
+                </b>
+                <br>
+                <p class="card-text"><%= el.caption %></p>
+                <p class="card-text">Type: 
+                    <% el.Tags.forEach(tag => { %>
+                    <span class="badge badge-info"><%= tag.nameTag %></span>
+                    <% }) %>
+                </p>
+                <p class="card-text">Like: <%= el.like %></p>
+                <a href="/posting/like/<%= el.id %>" class="btn btn-primary">Like</a>
+            </div>
+        </div>
+        <% }) %>
+    </center>
+</body>
+</html>

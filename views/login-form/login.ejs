@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+</head>
+<body>
+    
+
+    <center>
+        <h1>Login Dulu Bro!</h1>
+        <br>
+        <% if(errors) { %>
+            <% errors = errors.split(',') %>
+            <% errors.forEach(el => { %>
+                <p style="color: red;"><%= el %></p>
+            <% }) %>
+        <% } %>
+        <form action="/login" method="post">
+            
+            <p>
+                <label>Username</label>
+                <input type="text" name="userName">
+            </p>
+
+            <p>
+                <label>Password</label>
+                <input type="password" name="password">
+            </p>
+
+
+            <input type="submit" value="Submit">
+
+
+            <p>Belum ada akun? silahkan <a href="/register">Register</a></p>
+        </form>
+    </center>
+    
+</body>
+</html>

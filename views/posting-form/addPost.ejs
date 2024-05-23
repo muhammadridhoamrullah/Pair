@@ -1,0 +1,36 @@
+<%- include('../partial/_head.ejs', {title: "Add Post"}) %>
+<body>
+    
+    <%- include('../partial/_navbar') %>
+
+    <center>
+        <h1>Form Add Post</h1>
+        <br>
+        <form action="/posting" method="post">
+            <p>
+                <label>Image</label>
+                <input type="text" name="imgUrl">
+            </p>
+            <p>
+                <label>Title</label>
+                <input type="text" name="title">
+            </p>
+            <p>
+                <label>Caption</label>
+                <input type="text" name="caption">
+            </p>
+            <p>
+            <label>Tags:</label>
+            <select name="tags" multiple>
+                <% dataTag.forEach(tag => { %>
+                <option value="<%= tag.id %>"><%= tag.nameTag %></option>
+                <% }) %>
+            </select>
+        </p>
+            <input type="submit" value="Submit">
+
+        </form>
+    </center>
+    
+</body>
+</html>

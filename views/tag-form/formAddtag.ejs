@@ -1,0 +1,20 @@
+<%- include('../partial/_head.ejs', {title: "Beranda"}) %>
+<body>
+    
+    <%- include('../partial/_navbar') %>
+
+    <center>
+        <h1>Form Add Tag</h1>
+        <br>
+        <form action="/tags" method="post">
+            <p>
+                <label>Name Tag</label>
+                <input type="text" name="nameTag">
+            </p>
+
+            <input type="submit" value="Add">
+        </form>
+    </center>
+    
+</body>
+</html>

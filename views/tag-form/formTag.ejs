@@ -1,0 +1,24 @@
+<%- include('../partial/_head.ejs', {title: "Beranda"}) %>
+<body>
+    
+    <%- include('../partial/_navbar') %>
+    <center>
+        <h1>Tag List</h1>
+        <br>
+        <a href="/addTag"><button>Add Tag</button></a>
+        <br>
+        <table border="1">
+            <tr>
+                <th>No.</th>
+                <th>Name Tag</th>
+            </tr>
+            <% data.forEach((el, i) => { %>
+             <tr>
+                <td><%= i + 1 %></td>
+                <td><%= el.nameTag %></td>
+             </tr>
+            <% }) %>
+        </table>
+    </center>
+</body>
+</html>

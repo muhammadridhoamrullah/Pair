@@ -1,0 +1,46 @@
+<%- include('./partial/_head.ejs', {title: "Edit User"}) %>
+<body>
+    
+    <%- include('./partial/_navbar') %>
+    <center>
+        <h1>Form Edit User</h1>
+        <!-- userProfile.ejs -->
+
+<form action="/users/edit/<%= data.id %>" method="POST">
+    <p>
+    <label >Fullname:</label>
+    <input type="text" name="fullName" value="<%= data.fullName %>">
+    </p>
+
+    <p>
+    <label>City:</label>
+    <input type="text" name="city" value="<%= data.city %>">
+    </p>
+
+    <p>
+    <label>Job:</label>
+    <input type="text" name="job" value="<%= data.job %>">
+    </p>
+
+    <p>
+    <label>Height:</label>
+    <input type="number" name="height" value="<%= data.height %>">
+    </p>
+
+    <p>
+    <label>Weight:</label>
+    <input type="number" name="weight" value="<%= data.weight %>">
+    </p>
+
+    <p>
+    <label>Birth Of Date:</label>
+    <input type="date" name="BirthOfDate" value="<%= data.formatEditDate() %>">
+    </p>
+    <!-- Tambahan input sesuai dengan data yang ingin dilengkapi -->
+    
+    <button type="submit">Edit</button>
+</form>
+
+    </center>
+</body>
+</html>

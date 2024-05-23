@@ -1,0 +1,16 @@
+[
+    {
+        "email": "ridhoamrullah99@gmail.com",
+        "userName": "Ridho Amrullah",
+        "password": "tes123cuy",
+        "gender": "Pria",
+        "role": "User"
+    },
+    {
+        "email": "fitramelaniasri@gmail.com",
+        "userName": "Fitra Melania",
+        "password": "testes12345",
+        "gender": "Pria",
+        "role": "User"
+    }
+]

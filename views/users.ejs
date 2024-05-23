@@ -1,0 +1,49 @@
+<%- include('./partial/_head.ejs', {title: "User List"}) %>
+<body>
+    
+    <%- include('./partial/_navbar') %>
+<center>
+    <h1>Users List</h1>
+    <% if (deleted) { %>
+        <p style="color: red;">User <%= deleted %> removed</p>
+    <% } %>
+
+    <table border="1">
+        <tr>
+            <th>No</th>
+            <th>Email</th>
+            <th>Username</th>
+            <th>Gender</th>
+            <th>Fullname</th>
+            <th>City</th>
+            <th>Job</th>
+            <th>Height</th>
+            <th>Weight</th>
+            <th>Birth Of Date</th>
+            <th>Action</th>
+
+        </tr>
+        <% data.forEach((el, i) => { %>
+         <tr>
+            <td><%= i + 1 %></td>
+            <td><%= el.User.email %></td>
+            <td><%= el.User.userName %></td>
+            <td><%= el.User.gender %></td>
+            <td><%= el.fullName %></td>
+            <td><%= el.city %></td>
+            <td><%= el.job %></td>
+            <td><%= el.height %></td>
+            <td><%= el.weight %></td>
+            <td><%= el.formatEditDate() %></td>
+            <td>
+                <a href="/users/delete/<%= el.User.id %>"><button>Delete</button></a>
+            </td>
+
+         </tr>
+        <% }) %>
+    </table>
+</center>
+
+    
+</body>
+</html>
